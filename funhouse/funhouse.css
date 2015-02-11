@@ -1,0 +1,8 @@
+body {
+  padding-top: 4em;
+}
+
+textarea {
+  font-family: courier;
+  min-height: 10em;
+}
