@@ -1,0 +1,3 @@
+# coding-challenges
+
+Just a little place to dump problems/solutions for basic programming challenges, some from Euler, some from ACM...
