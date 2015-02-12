@@ -27,6 +27,35 @@
 // - C can be placed before D to form 400 (CD) and before M to form 900 (CM)
 // - There is nothing higher represented than M, so something like 4000 would be MMMM
 
+var romanNumeral = {
+  toNumber: function (str) {
+    var tots = 0,
+        vals = {
+          'I': 1,
+          'V': 5,
+          'X': 10,
+          'L': 50,
+          'C': 100,
+          'D': 500,
+          'M': 1000
+        };
+
+    var prev = 0;
+
+    for (var i = str.length - 1; i >= 0; --i) {
+      var current = vals[str[i]];
+
+      if (!current) throw new Error(current + ' is not a valid roman numeral');
+
+      tots = tots + (current < prev ? -current : current);
+      prev = current;
+    }
+
+    return tots;
+  }
+};
+
+
 function romanArray(start, middle, end) {
   return [
     start,
