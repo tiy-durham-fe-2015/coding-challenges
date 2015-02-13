@@ -52,6 +52,10 @@ var romanNumeral = {
       prev = current;
     }
 
+    if (romanNumeral.fromNumber(tots) !== str) {
+      throw new Error(str + ' is not a valid roman numeral');
+    }
+
     return tots;
   },
 
@@ -59,7 +63,7 @@ var romanNumeral = {
   fromNumber: function (num) {
     if (typeof num !== 'number') throw new Error('Num must be a number!');
     if (num < 1) throw new Error('Numbers less than 1 are not supported!');
-    
+
     function romanArray(start, middle, end) {
       return [
         start,
