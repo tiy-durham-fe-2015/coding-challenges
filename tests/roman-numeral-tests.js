@@ -31,6 +31,14 @@ describe('roman', function () {
       expect(invalidRomanNumeral('XLX')).toThrow();
     });
 
+    it('throws exception if IM', function () {
+      expect(invalidRomanNumeral('IM')).toThrow();
+    });
+
+    it('throws exception if MIM', function () {
+      expect(invalidRomanNumeral('MIM')).toThrow();
+    });
+
     it('throws exception if adding number more than 3x', function () {
       expect(invalidRomanNumeral('XXXX')).toThrow();
     });
