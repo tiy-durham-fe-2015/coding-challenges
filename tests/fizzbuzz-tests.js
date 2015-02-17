@@ -1,6 +1,6 @@
 describe('fizzbuzz', function () {
 
-  it('the first 16 numbers are correct', function () {
+  it('the first 15 numbers are correct', function () {
     var result = fizzbuzz();
     expect(result.slice(0, 15)).toEqual([
       1, 2, 'Fizz', 4, 'Buzz', 'Fizz',

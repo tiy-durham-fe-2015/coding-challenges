@@ -26,14 +26,13 @@
 //     13,
 //     14,
 //     'FizzBuzz',
-//     'Fizz'
 function fizzbuzz(n) {
   var result = [];
 
   for (var i = 1; i <= 100; ++i) {
     var divisibleBy3 = (i % 3 === 0),
         divisibleBy5 = (i % 5 === 0);
-    
+
     if (divisibleBy3 && divisibleBy5) {
       result.push('FizzBuzz');
     } else if (divisibleBy3) {
