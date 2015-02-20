@@ -1,20 +1,19 @@
 function toHex(num) {
-  var hexes = {
-    '10': 'A',
-    '11': 'B',
-    '12': 'C',
-    '13': 'D',
-    '14': 'E',
-    '15': 'F'
-  };
-
-  var result = '';
-
-  while (num > 0) {
-    var mod = num % 16;
-    result = (hexes[mod] || mod) + result;
-    num = Math.floor(num / 16);
+  if (typeof num !== 'number') {
+    throw new Error('Ruh roh. We needs a number, and you passed us ' + num);
   }
 
-  return result;
+  var hexes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F'];
+  var wasNegative = num < 0;
+  var result = '';
+
+  num = Math.abs(num);
+
+  do {
+    var mod = num % 16;
+    result = hexes[mod] + result;
+    num = Math.floor(num / 16);
+  } while (num > 0)
+
+  return wasNegative ? '-' + result : result;
 }

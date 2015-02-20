@@ -4,15 +4,20 @@ describe('to-hex', function () {
     expect(toHex(255)).toBe('FF');
   });
 
-  it('returns A when passed 10', function () {
-    expect(toHex(10)).toBe('A');
+  it('returns 0 when passed 0', function () {
+    expect(toHex(0)).toBe('0');
   });
 
-  it('returns 244E41 when passed 2379329', function () {
-    expect(toHex(2379329)).toBe('244E41');
+  it('returns "-9BA" when passed -2490', function () {
+    expect(toHex(-2490)).toBe('-9BA');
   });
 
-  it('returns DD8E88B when passed 232319115', function () {
-    expect(toHex(232319115)).toBe('DD8E88B');
+  it('should throw an exception when passed a string', function () {
+    function badCall() {
+      toHex('foo');
+    }
+
+    expect(badCall).toThrow();
   });
+
 });
